@@ -1,0 +1,9 @@
+.equipment-card {
+  display: flex;
+  //min-height: 296px;
+  min-height: 240px;
+
+  @media (max-width: 749px) {
+    display: block;
+  }
+}

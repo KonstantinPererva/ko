@@ -1,0 +1,12 @@
+.media-box-title {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin: 0 0 34px;
+
+  @media (max-width: 679px) {
+    margin: 0 0 20px;
+  }
+}

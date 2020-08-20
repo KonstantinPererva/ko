@@ -1,0 +1,9 @@
+.specialist-specialty-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 21px;
+
+  @media (max-width: 749px) {
+    margin: 0 0 11px;
+  }
+}

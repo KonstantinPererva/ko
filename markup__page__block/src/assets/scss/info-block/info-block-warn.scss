@@ -1,0 +1,19 @@
+.info-block-warn {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #FFFFFF;
+  padding: 28px 30px 28px 77px;
+  background: $c-strong url(/assets/img/svg/warn.svg) no-repeat 21px center;
+  border-radius: 5px;
+  margin: 43px 0 0;
+
+  @media (max-width: 749px) {
+    background: $c-strong url(/assets/img/svg/warn.svg) no-repeat 11px 11px / 21px 20px;
+    padding: 11px 20px 13px 52px;
+  }
+
+  & p {
+    margin: 0;
+  }
+}

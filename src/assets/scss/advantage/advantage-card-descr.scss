@@ -1,0 +1,22 @@
+.advantage-card-descr {
+  text-align: center;
+  margin: 20px 0 0;
+
+  & span {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    color: #838583;
+  }
+
+  .advantage-card_small & {
+    margin: 37px 0 0;
+
+    & span {
+      font-size: 14px;
+      line-height: 140%;
+    }
+  }
+}

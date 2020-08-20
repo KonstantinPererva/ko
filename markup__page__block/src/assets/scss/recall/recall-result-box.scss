@@ -1,0 +1,16 @@
+.recall-result-box {
+  display: flex;
+
+  &__before {
+    flex: 1 1 0;
+    margin: 0 25px 0 0;
+
+    @media (max-width: 749px) {
+      margin: 0 10px 0 0;
+    }
+  }
+
+  &__after {
+    flex: 1 1 0;
+  }
+}

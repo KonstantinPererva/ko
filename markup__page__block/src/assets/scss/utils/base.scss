@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  @media (max-width: 992px) {
+    padding: 0 15px;
+  }
+}
+
+.wrapper-info {
+  max-width: 810px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  color: $c-text;
+  font-family: $f-l;
+
+  @media (max-width: 1200px) {
+    max-width: 750px;
+  }
+
+  & * {
+    box-sizing: border-box;
+
+    &:after, &:before {
+      box-sizing: border-box;
+    }
+  }
+
+  & svg {
+    flex-shrink: 0;
+    display: block;
+
+    & path {
+      transition: 150ms;
+    }
+  }
+
+  & img {
+    flex-shrink: 0;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  & a {
+    transition: 150ms;
+  }
+}

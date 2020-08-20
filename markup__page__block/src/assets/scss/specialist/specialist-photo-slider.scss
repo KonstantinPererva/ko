@@ -1,0 +1,8 @@
+.specialist-photo-slider {
+  position: relative;
+  padding: 0 30px;
+
+  @media (max-width: 749px) {
+    padding: 0 15px;
+  }
+}

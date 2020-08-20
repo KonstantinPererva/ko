@@ -1,0 +1,52 @@
+.button-main {
+  @include button;
+  min-width: 265px;
+  height: 46px;
+  padding: 0 34px;
+  border-radius: 25px;
+  text-transform: uppercase;
+
+  @media (max-width: 749px) {
+    height: 40px;
+    font-size: 14px;
+  }
+
+  &_blue {
+    color: #fff;
+    background: $c-main;
+    border-color: $c-main;
+  }
+
+  &_white {
+    color: $c-text;
+    background: #fff;
+    border-color: #fff;
+  }
+
+  &_orange {
+    color: #fff;
+    background: $c-orange;
+    border-color: $c-orange;
+  }
+
+  &_transparent {
+    color: $c-main;
+    background: transparent;
+    border-color: $c-main;
+  }
+
+  &_small {
+    min-width: 210px;
+    text-transform: none;
+  }
+
+  &:hover, &:focus, &:active {
+    color: #fff;
+    background: $c-text;
+    border-color: $c-text;
+
+    & svg path {
+      fill: #fff;
+    }
+  }
+}

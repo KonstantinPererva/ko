@@ -1,0 +1,11 @@
+.advantage-card-title {
+  text-align: center;
+
+  & span {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 100%;
+    color: #272727;
+  }
+}

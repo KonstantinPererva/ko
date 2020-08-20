@@ -1,0 +1,42 @@
+.media-box {
+  display: flex;
+  background: $c-main;
+  overflow: hidden;
+  border-radius: 5px;
+  min-height: 250px;
+  margin: 60px 0;
+
+  @media (max-width: 749px) {
+    margin: 40px 0;
+  }
+
+  @media (max-width: 679px) {
+    display: block;
+  }
+
+  &__img {
+    flex: 1 1 0;
+
+    & img {
+      object-fit: cover;
+      height: 100%;
+
+      @media (max-width: 679px) {
+        object-fit: contain;
+        height: auto;
+        width: 100%;
+      }
+    }
+
+  }
+
+  &__text {
+    width: 314px;
+    padding: 20px 16px;
+
+    @media (max-width: 679px) {
+      width: 100%;
+      padding: 22px;
+    }
+  }
+}

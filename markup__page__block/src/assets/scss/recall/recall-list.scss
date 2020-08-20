@@ -1,0 +1,7 @@
+.recall-list {
+  display: flex;
+
+  @media (max-width: 749px) {
+    display: block;
+  }
+}

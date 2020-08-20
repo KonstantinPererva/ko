@@ -1,0 +1,26 @@
+.text-section {
+
+  & p, & span {
+    font-style: normal;
+    font-size: 24px;
+    line-height: 140%;
+    text-align: center;
+    color: #272727;
+  }
+
+  & p {
+    margin: 0 0 40px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  span.text-section__strong {
+    font-weight: bold;
+  }
+
+  span.text-section__mark {
+    color: $c-main;
+  }
+}

@@ -1,0 +1,15 @@
+.equipment-card-addition {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: $c-text-gray;
+
+  @media (max-width: 749px) {
+    font-size: 12px;
+    line-height: 17px;
+  }
+
+  & p {
+    margin: 0;
+  }
+}

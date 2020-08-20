@@ -1,0 +1,8 @@
+.advantage-list {
+  display: flex;
+  flex-wrap: wrap;
+  
+  &_white {
+    background: #fff;
+  }
+}

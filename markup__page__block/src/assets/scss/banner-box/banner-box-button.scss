@@ -1,0 +1,8 @@
+.banner-box-button {
+  margin: 29px 0 0;
+  text-align: center;
+
+  @media (max-width: 749px) {
+    margin: 32px auto 0;
+  }
+}

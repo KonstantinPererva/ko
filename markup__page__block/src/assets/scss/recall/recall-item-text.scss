@@ -1,0 +1,16 @@
+.recall-item-text {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  margin: 0 0 12px;
+
+  & p {
+    margin: 0;
+  }
+
+  @media (max-width: 749px) {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 0 10px;
+  }
+}

@@ -1,0 +1,18 @@
+.banner-box {
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  padding: 43px 30px;
+
+  @media (max-width: 749px) {
+    padding: 39px 20px 29px;
+  }
+
+  &_bg-main {
+    background: $c-main;
+    border: 1px solid $c-main;
+
+    @media (max-width: 749px) {
+      margin: 0 -15px;
+    }
+  }
+}

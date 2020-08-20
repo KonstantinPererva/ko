@@ -1,0 +1,12 @@
+.recall-item {
+  flex: 1 0 0;
+  margin: 0 40px 0 0;
+
+  @media (max-width: 749px) {
+    margin: 0 0 30px;
+  }
+
+  &:last-child {
+    margin: 0;
+  }
+}

@@ -1,0 +1,43 @@
+.slider-button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: transparent;
+  transition: 150ms;
+  border: 0;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  cursor: pointer;
+  user-select: none;
+
+  @media (max-width: 749px) {
+    & svg {
+      width: 10px;
+    }
+  }
+
+  &:focus,&:active,&:hover {
+    outline: none;
+  }
+
+  &.slider-button-prev {
+    left: 0;
+
+    @media (max-width: 749px) {
+      left: -15px;
+    }
+  }
+
+  &.slider-button-next {
+    right: 0;
+
+    @media (max-width: 749px) {
+      right: -15px;
+    }
+  }
+}

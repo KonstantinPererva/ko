@@ -1,0 +1,18 @@
+.banner-box-title {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 auto 26px;
+  max-width: 512px;
+  width: 100%;
+
+  @media (max-width: 749px) {
+    margin: 0 auto 32px;
+  }
+
+  .banner-box_bg-main & {
+    color: #fff;
+  }
+}

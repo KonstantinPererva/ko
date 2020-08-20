@@ -1,0 +1,22 @@
+.specialist-specialty-item {
+  border: 1px solid $c-main;
+  border-radius: 3px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 14px;
+  color: $c-main;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  height: 30px;
+  padding: 0 12px;
+  margin: 0 5px 5px 0;
+
+  @media (max-width: 749px) {
+    font-size: 12px;
+    line-height: 12px;
+    min-width: 100px;
+    height: 25px;
+  }
+}

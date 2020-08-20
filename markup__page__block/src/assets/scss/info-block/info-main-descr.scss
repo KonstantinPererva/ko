@@ -1,0 +1,20 @@
+.info-main-descr {
+  margin: 60px 0;
+  font-size: 24px;
+  line-height: 34px;
+  color: $c-text;
+
+  @media (max-width: 749px) {
+    font-size: 18px;
+    line-height: 25px;
+    margin: 14px 0;
+  }
+
+  & p {
+    margin: 0;
+
+    & .mark-text {
+      color: $c-main;
+    }
+  }
+}

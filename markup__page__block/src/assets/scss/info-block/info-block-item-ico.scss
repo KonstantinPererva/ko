@@ -1,0 +1,19 @@
+.info-block-item-ico {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 26px;
+
+  .info-block-list_main & {
+    height: 42px;
+
+    @media (max-width: 749px) {
+      height: 32px;
+    }
+  }
+
+  & img {
+    display: block;
+    margin: 0 auto;
+  }
+}

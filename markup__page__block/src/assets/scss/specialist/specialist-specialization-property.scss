@@ -1,0 +1,13 @@
+.specialist-specialization-property {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: $c-text-gray;
+  margin: 0 0 12px;
+
+  @media (max-width: 749px) {
+    font-size: 12px;
+    line-height: 17px;
+    margin: 0 0 10px;
+  }
+}

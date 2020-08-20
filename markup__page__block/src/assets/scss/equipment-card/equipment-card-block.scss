@@ -1,0 +1,7 @@
+.equipment-card-block {
+  padding: 5px 20px;
+
+  @media (max-width: 749px) {
+    padding: 5px 0;
+  }
+}
