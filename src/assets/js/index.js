@@ -248,6 +248,34 @@ function closePopup(popup) {
     p.close();
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    if (document.querySelector('.slider-specialist')) {
+        var bannerSlider = new Swiper('.slider-specialist', {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            speed: 600,
+            loop: true,
+            navigation: {
+                prevEl: '.slider-main-prev',
+                nextEl: '.slider-main-next',
+            }
+        });
+    }
+
+    if (document.querySelector('.slider-video')) {
+        var bannerSlider = new Swiper('.slider-video', {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            speed: 600,
+            loop: true,
+            navigation: {
+                prevEl: '#slider-video-button-prev',
+                nextEl: '#slider-video-button-next',
+            }
+        });
+    }
+});
+
 // document.addEventListener('DOMContentLoaded', function () {
 //     if (document.querySelector('.button-toggle-menu') && document.querySelector('.header-mob-menu')) {
 //         var toggleMenu = new GroupBox('.button-toggle-menu', '.header-mob-menu');

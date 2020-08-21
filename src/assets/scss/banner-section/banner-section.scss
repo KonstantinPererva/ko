@@ -1,0 +1,36 @@
+.banner-section {
+  height: 640px;
+  overflow: hidden;
+  background-image: url('/assets/img/banner-section-1.jpg');
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+
+  & > * {
+    flex-shrink: 0;
+  }
+
+
+  &__top {
+    margin-bottom: -166px;
+    justify-content: flex-start;
+  }
+
+  &__bottom {
+    margin-top: -166px;
+    position: relative;
+    z-index: 0;
+    justify-content: flex-end;
+  }
+
+  & .page-content {
+    height: 474px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & > * {
+      flex-shrink: 0;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.accordion-descr {
+  display: none;
+  padding: 18px 0 0;
+
+  & span {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 140%;
+    color: #838583;
+  }
+
+  .accordion-list-item.active & {
+    display: block;
+  }
+}

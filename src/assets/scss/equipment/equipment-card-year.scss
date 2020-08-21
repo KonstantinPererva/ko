@@ -1,0 +1,24 @@
+.equipment-card-year {
+  margin: 0 0 33px;
+
+  & span {
+    display: block;
+  }
+
+  & span.equipment-card-year__property {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 140%;
+    color: #838583;
+    margin: 0 0 4px;
+  }
+
+  & span.equipment-card-year__value {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 100%;
+    color: $c-main;
+  }
+}

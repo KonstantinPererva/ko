@@ -1,0 +1,13 @@
+.equipment-card-addition {
+  padding: 40px;
+  background: $c-main;
+
+  & p {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 140%;
+    color: #FFFFFF;
+    margin: 0;
+  }
+}

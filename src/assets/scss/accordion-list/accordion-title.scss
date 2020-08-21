@@ -1,0 +1,24 @@
+.accordion-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+
+  & span {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 140%;
+    color: #272727;
+  }
+
+  .accordion-list-item.active &__indicator {
+    & svg rect {
+      fill: #838583;
+
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.equipment-card-title {
+
+  & span {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 140%;
+    color: #272727;
+  }
+
+  &_desktop {
+    margin: 0 0 20px;
+    display: block;
+  }
+
+  &_mob {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 9px 14px;
+
+    & span {
+      font-size: 24px;
+      color: #FFFFFF;
+    }
+  }
+}

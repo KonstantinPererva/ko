@@ -1,0 +1,27 @@
+.attention-main {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 23px 40px 23px 0;
+
+  &__ico {
+    display: flex;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    padding: 20px;
+  }
+
+  &__text {
+    padding: 0 0 0 5px;
+  }
+
+  & p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    color: #272727;
+    margin: 0;
+  }
+}

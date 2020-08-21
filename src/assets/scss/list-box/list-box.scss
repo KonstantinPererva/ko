@@ -1,0 +1,8 @@
+.list-box {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    @include grid(2,30px,30px);
+  }
+}

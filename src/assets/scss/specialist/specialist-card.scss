@@ -1,0 +1,13 @@
+.specialist-card {
+  position: relative;
+  height: 630px;
+  overflow: hidden;
+
+  & .page-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+}

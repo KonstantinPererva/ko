@@ -1,0 +1,33 @@
+.recall-result-box {
+  position: relative;
+  overflow: hidden;
+  padding: 40% 0 0;
+
+  &__after, &__before {
+    position: absolute;
+    top: 0;
+    height: 100%;
+
+    & img {
+      width: 506px;
+      height: 200px;
+    }
+  }
+
+  &__before {
+    z-index: 1;
+    left: 0;
+    width: 50%;
+
+    & img {
+      object-fit: cover;
+      object-position: left center;
+    }
+  }
+
+  &__after {
+    z-index: 0;
+    right: 0;
+    width: 100%;
+  }
+}

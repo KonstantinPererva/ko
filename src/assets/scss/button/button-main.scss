@@ -39,6 +39,13 @@
     min-width: 210px;
     text-transform: none;
   }
+  
+  &_section {
+    min-width: 286px;
+    height: 40px;
+    font-size: 14px;
+    text-transform: none;
+  }
 
   &:hover, &:focus, &:active {
     color: #fff;
