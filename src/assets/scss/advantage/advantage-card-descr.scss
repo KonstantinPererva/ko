@@ -2,6 +2,10 @@
   text-align: center;
   margin: 20px 0 0;
 
+  @media ($laptop2) {
+    margin: 25px 0 0;
+  }
+
   & span {
     font-style: normal;
     font-weight: normal;
@@ -9,10 +13,22 @@
     line-height: 100%;
     text-align: center;
     color: #838583;
+
+    @media ($laptop2) {
+      @include fzIns(18,$valLeptop2);
+    }
+
+    @media ($tablet3) {
+      font-size: 14px;
+    }
   }
 
   .advantage-card_small & {
     margin: 37px 0 0;
+
+    @media ($laptop2) {
+      margin: 25px 0 0;
+    }
 
     & span {
       font-size: 14px;

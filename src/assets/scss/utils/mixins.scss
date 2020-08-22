@@ -21,8 +21,6 @@
   border-width: 1px;
   border-style: solid;
   font-weight: bold;
-  font-size: 16px;
-  line-height: 16px;
   outline: none;
   user-select: none;
   transition: 150ms;
@@ -71,4 +69,22 @@
   &:nth-child(n + #{$cols + 1}) {
     margin-top: $margin-top;
   }
+}
+
+@mixin heightIns ($heightStart, $widthStart) {
+  height: calc(#{$heightStart} * 100vw / #{$widthStart});
+}
+
+@mixin fzIns ($fzStart, $widthStart) {
+  font-size: calc(#{$fzStart} * 100vw / #{$widthStart});
+}
+
+@mixin moveBg ($widthStart) {
+  background-position-x: $widthStart / 100 * 1%;
+}
+
+@function marginIns ($margStart, $widthStart) {
+  $margStart: calc(#{$margStart} * 100vw / #{$widthStart});
+
+  @return $margStart;
 }

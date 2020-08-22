@@ -2,6 +2,19 @@
   margin: 0 0 50px;
   text-align: center;
 
+  h2 &, h3 & {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 140%;
+    text-align: center;
+    color: #272727;
+
+    @media ($laptop2) {
+      @include fzIns(36,$valLeptop2);
+    }
+  }
+
   & span {
     font-style: normal;
     font-weight: bold;
@@ -9,5 +22,9 @@
     line-height: 140%;
     text-align: center;
     color: #272727;
+
+    @media ($laptop2) {
+      @include fzIns(36,$valLeptop2);
+    }
   }
 }

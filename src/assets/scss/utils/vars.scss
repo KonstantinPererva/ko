@@ -12,9 +12,18 @@ $c-text: #272727;
 $c-text-gray: #838583;
 
 //media max-width
-$laptop: 'max-width: 1440px';
-$tablet1: 'max-width: 1151px';
-$tablet2: 'max-width: 1024px';
-$tablet3: 'max-width: 991px';
-$mobile1: 'max-width: 767px';
-$mobile2: 'max-width: 639px';
+$valLeptop1: 1440;
+$valLeptop2: 1200;
+$valTablet1: 1151;
+$valTablet2: 1024;
+$valTablet3: 991;
+$valMobile1: 767;
+$valMobile2: 639;
+
+$laptop1: 'max-width: #{$valLeptop1}px';
+$laptop2: 'max-width: #{$valLeptop2}px';
+$tablet1: 'max-width: #{$valTablet1}px';
+$tablet2: 'max-width: #{$valTablet2}px';
+$tablet3: 'max-width: #{$valTablet3}px';
+$mobile1: 'max-width: #{$valMobile1}px';
+$mobile2: 'max-width: #{$valMobile2}px';

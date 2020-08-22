@@ -1,11 +1,31 @@
 .banner-main-title {
   margin: 0 0 7px;
 
+  @media ($laptop2) {
+    max-width: 50%;
+    width: 100%;
+    margin: 0 0 25px;
+  }
+
+  h1 &, h2 & {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 56px;
+    line-height: 140%;
+    color: #FFFFFF;
+    margin: 0 0 7px;
+  }
+
   & span {
     font-style: normal;
     font-weight: bold;
     font-size: 56px;
     line-height: 140%;
     color: #FFFFFF;
+
+    @media ($laptop2) {
+      @include fzIns(56, $valLeptop2);
+      line-height: 100%;
+    }
   }
 }

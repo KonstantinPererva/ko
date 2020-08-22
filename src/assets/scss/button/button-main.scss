@@ -2,11 +2,13 @@
   @include button;
   min-width: 265px;
   height: 46px;
+  font-size: 16px;
+  line-height: 100%;
   padding: 0 34px;
   border-radius: 25px;
   text-transform: uppercase;
 
-  @media (max-width: 749px) {
+  @media ($laptop2) {
     height: 40px;
     font-size: 14px;
   }

@@ -1,12 +1,25 @@
 .advantage-card {
   @include grid (3, 30px, 30px);
   background: #fff;
-  margin: 0 30px 0 0;
   padding: 73px 55px;
   min-height: 430px;
+
+  @media ($laptop2) {
+    min-height: 260px;
+  }
+
+  @media ($tablet1) {
+    padding: 35px 20px;
+    @include grid (3, 15px, 15px);
+  }
 
   &_small {
     padding: 48px 60px;
     min-height: 333px;
+
+    @media ($laptop2) {
+      padding: 48px 40px;
+      min-height: 260px;
+    }
   }
 }

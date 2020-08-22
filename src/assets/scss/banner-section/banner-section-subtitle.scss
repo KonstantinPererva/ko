@@ -12,6 +12,10 @@
     text-align: center;
     color: #FFFFFF;
 
+    @media ($laptop2) {
+      @include fzIns(24,$valLeptop2);
+    }
+
     &.text-strong {
       font-weight: bold;
     }

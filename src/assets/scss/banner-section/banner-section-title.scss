@@ -12,5 +12,9 @@
     text-align: center;
     text-transform: uppercase;
     color: #FFFFFF;
+
+    @media ($laptop2) {
+      @include fzIns(36,$valLeptop2);
+    }
   }
 }

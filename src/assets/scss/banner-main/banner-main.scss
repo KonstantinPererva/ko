@@ -1,5 +1,25 @@
 .banner-main {
   height: 780px;
-  background-image: url("/assets/img/banner.png");
+  background-repeat: no-repeat;
   padding-top: 356px;
+
+  @media (max-width: 1900px) {
+    background-position: 30% 0;
+  }
+
+  @media ($laptop2) {
+    @include heightIns (680, $valLeptop2);
+    padding-top: 0;
+    background-size: cover;
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+
+  & .page-content {
+
+    @media ($laptop2) {
+      padding: 0 60px;
+    }
+  }
 }
