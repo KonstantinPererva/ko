@@ -3,6 +3,17 @@
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+  user-select: none;
+
+  .accordion-list-item.open & span {
+    color: $c-main;
+  }
+
+  &:hover {
+    & span {
+      color: $c-main;
+    }
+  }
 
   & span {
     font-style: normal;
@@ -10,14 +21,27 @@
     font-size: 18px;
     line-height: 140%;
     color: #272727;
+    transition: 200ms;
   }
 
-  .accordion-list-item.active &__indicator {
-    & svg rect {
-      fill: #838583;
+  &__indicator svg {
+    transition: inherit;
 
-      &:last-child {
-        display: none;
+    * {
+      transition: inherit;
+    }
+  }
+
+  &__indicator.open {
+    transform: rotate(90deg);
+
+    & svg {
+      rect {
+        fill: #838583;
+
+        &:first-child {
+          opacity: 0;
+        }
       }
     }
   }
