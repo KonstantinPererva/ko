@@ -138,46 +138,46 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-function ParalaxImg (node) {
-    var self = this;
-    self.node = document.getElementById(node);
-    self.img = self.node.getElementsByTagName('img')[0];
-
-    self.parallaxStop = null;
-
-    self.centerPage = window.innerHeight / 2;
-
-    self.handleScroll = function () {
-        self.maxPointTop = self.node.getBoundingClientRect().top;
-        self.maxPointBottom = self.node.getBoundingClientRect().bottom;
-
-        window.addEventListener('scroll', function() {
-            self.scrollTop = self.maxPointTop - (self.centerPage - self.maxPointTop);
-
-            self.maxPointTop = self.node.getBoundingClientRect().top;
-            self.maxPointBottom = self.node.getBoundingClientRect().bottom;
-
-            self.parallaxStop = self.maxPointTop >= window.innerHeight || self.maxPointBottom <= 0;
-
-            parallax();
-        });
-
-        function parallax() {
-            if (self.parallaxStop) { return }
-
-            self.positionCenterBox = self.scrollTop * (-0.09);
-            self.img.style.transform = 'translate3d(0,' + self.positionCenterBox + 'px,0)';
-
-            requestAnimationFrame(parallax);
-        }
-
-        parallax();
-    };
-
-    self.handleScroll();
-}
-
-new ParalaxImg('banner-section-1');
-new ParalaxImg('banner-section-2');
-new ParalaxImg('banner-section-3');
-new ParalaxImg('banner-section-4');
+// function ParalaxImg (node) {
+//     var self = this;
+//     self.node = document.getElementById(node);
+//     self.img = self.node.getElementsByTagName('img')[0];
+//
+//     self.parallaxStop = null;
+//
+//     self.centerPage = window.innerHeight / 2;
+//
+//     self.handleScroll = function () {
+//         self.maxPointTop = self.node.getBoundingClientRect().top;
+//         self.maxPointBottom = self.node.getBoundingClientRect().bottom;
+//
+//         window.addEventListener('scroll', function() {
+//             self.scrollTop = self.maxPointTop - (self.centerPage - self.maxPointTop);
+//
+//             self.maxPointTop = self.node.getBoundingClientRect().top;
+//             self.maxPointBottom = self.node.getBoundingClientRect().bottom;
+//
+//             self.parallaxStop = self.maxPointTop >= window.innerHeight || self.maxPointBottom <= 0;
+//
+//             parallax();
+//         });
+//
+//         function parallax() {
+//             if (self.parallaxStop) { return }
+//
+//             self.positionCenterBox = self.scrollTop * (-0.09);
+//             self.img.style.transform = 'translate3d(0,' + self.positionCenterBox + 'px,0)';
+//
+//             requestAnimationFrame(parallax);
+//         }
+//
+//         parallax();
+//     };
+//
+//     self.handleScroll();
+// }
+//
+// new ParalaxImg('banner-section-1');
+// new ParalaxImg('banner-section-2');
+// new ParalaxImg('banner-section-3');
+// new ParalaxImg('banner-section-4');

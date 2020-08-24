@@ -864,8 +864,9 @@
         <footer><div class="sides"><div class="newsletter"><h6>Рассылка</h6> <p>Введите свой E-Mail адрес чтобы получать новости и другую инофрмацию которая может быть интересна вам</p> <form action="/api/subscribe" method="POST"><div class="error" style="height: 0px;"><div class="text">&nbsp;</div></div> <input type="hidden" name="_token" skip-cleaning="" value="lWNSiXdmIhpHb64RuaGgXrLEUDs3PQmCFsHnwoFW"> <div class="form-group"><input type="email" name="email" placeholder="E-Mail"> <div class="error" style="height: 0px;"><div class="text">&nbsp;</div></div> <div class="error" style="height: 0px;"><div class="text">&nbsp;</div></div></div> <button type="submit"><!----> <span>Подписаться</span></button></form></div> <div class="contacts"><h6>Контакты</h6> <address><span class="mdi mdi-phone"></span> <div class="phones"><a href="tel:#+380577616131">(057) 761-61-31</a> <a href="tel:#+380937616131">(093) 761-61-31</a> <a href="tel:#+380995484485">(099) 548-44-85</a> <a href="tel:#+380973186758">(097) 318-67-58</a></div></address> <address><span class="mdi mdi-map-marker"></span> <div class="address">г. Харьков, ул. Маяковского, 24 (м. Университет, м. Пушкинская)</div></address></div> <div class="logo"><img src="/assets/images/75ae8f10a895ba048ec1343ae300e425.webp"> <ul class="socials"><li><a href="https://instagram.com/ok.centre" class="instagram"><i class="fab fa-instagram"></i></a></li> <li><a href="https://facebook.com/okcentr" class="facebook"><i class="fab fa-facebook-f"></i></a></li> <li><a href="https://www.youtube.com/channel/UCAB1Iw7612Vs0pHmph5tWOw" class="youtube"><i class="fab fa-youtube"></i></a></li> <li><a href="https://t.me/ok_centre" class="telegram"><i class="fab fa-telegram-plane"></i></a></li></ul></div></div></footer>
     </div>
 
-    <script src="assets/libs/swiper/swiper.min.js"></script>
-    <script src="assets/libs/jquery/jquery-3.4.1.min.js"></script>
+    <script src="/assets/libs/swiper/swiper.min.js"></script>
+    <script src="/assets/libs/jquery/jquery-3.4.1.min.js"></script>
+    <script src="/assets/libs/parallax/simpleParallax.js"></script>
 
     <script>
         $(document).ready(function(){
@@ -918,6 +919,16 @@
 
                 resize(self.e);
             });
+        });
+
+
+
+
+        var image = document.getElementsByClassName('banner-section-bg');
+        new simpleParallax(image, {
+            delay: .6,
+            transition: 'cubic-bezier(0,0,0,1)',
+            orientation: 'down',
         });
     </script>
 </body>
