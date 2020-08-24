@@ -12,6 +12,10 @@
     line-height: 140%;
     color: #838583;
     margin: 0 0 4px;
+
+    @media ($tablet3) {
+      font-size: 12px;
+    }
   }
 
   & span.equipment-card-year__value {
@@ -20,5 +24,9 @@
     font-size: 18px;
     line-height: 100%;
     color: $c-main;
+
+    @media ($tablet3) {
+      font-size: 12px;
+    }
   }
 }

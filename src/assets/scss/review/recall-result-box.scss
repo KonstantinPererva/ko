@@ -14,20 +14,20 @@
     }
   }
 
-  &__before {
+  &__after {
     z-index: 1;
-    left: 0;
+    right: 0;
     width: 50%;
 
     & img {
       object-fit: cover;
-      object-position: left center;
+      object-position: right center;
     }
   }
 
-  &__after {
+  &__before {
     z-index: 0;
-    right: 0;
+    left: 0;
     width: 100%;
   }
 }

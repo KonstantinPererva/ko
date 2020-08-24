@@ -9,9 +9,11 @@
     color: $c-main;
   }
 
-  &:hover {
-    & span {
-      color: $c-main;
+  @media (hover: hover) {
+    &:hover {
+      & span {
+        color: $c-main;
+      }
     }
   }
 

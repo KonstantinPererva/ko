@@ -3,4 +3,12 @@
   flex-shrink: 0;
   width: 450px;
   margin: 0 60px 0 0;
+
+  @media ($laptop2) {
+    margin: 0 15px 0 0;
+  }
+
+  @media ($tablet3) {
+    width: 320px;
+  }
 }

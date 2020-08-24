@@ -2,6 +2,10 @@
   padding: 40px;
   background: $c-main;
 
+  @media ($tablet3) {
+    padding: 20px;
+  }
+
   & p {
     font-style: normal;
     font-weight: bold;
@@ -9,5 +13,13 @@
     line-height: 140%;
     color: #FFFFFF;
     margin: 0;
+
+    @media ($laptop2) {
+      @include fzIns(20,$valLeptop2);
+    }
+
+    @media ($tablet3) {
+      font-size: 14px;
+    }
   }
 }

@@ -8,5 +8,13 @@
     font-size: 18px;
     line-height: 140%;
     color: #272727;
+
+    @media ($laptop2) {
+      @include fzIns(18,$valLeptop2);
+    }
+
+    @media ($tablet3) {
+      font-size: 14px;
+    }
   }
 }

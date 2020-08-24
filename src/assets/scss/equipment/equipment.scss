@@ -3,4 +3,8 @@
   background: #fff;
   position: relative;
   z-index: 1;
+
+  @media ($laptop2) {
+    padding: 50px 15px 15px;
+  }
 }

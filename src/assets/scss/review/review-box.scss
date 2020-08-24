@@ -5,6 +5,10 @@
   flex-direction: column;
   height: 100%;
 
+  @media ($tablet3) {
+    padding: 12px 15px 18px;
+  }
+
   & > * {
     flex-shrink: 0;
   }
