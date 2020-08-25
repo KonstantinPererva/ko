@@ -1,6 +1,10 @@
 .equipment-card-year {
   margin: 0 0 33px;
 
+  @media ($mobile1) {
+    margin: 0 0 15px;
+  }
+
   & span {
     display: block;
   }

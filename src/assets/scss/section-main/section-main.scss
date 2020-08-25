@@ -1,5 +1,39 @@
 .section-main {
+  position: relative;
   margin: 0 0 70px;
+
+  @media ($mobile1) {
+    margin: 0 0 45px;
+  }
+
+  &_change-mob {
+    @media ($mobile1) {
+      padding: 187px 0 17px;
+      margin-top: -187px;
+      background: #1D86BC;
+    }
+  }
+
+  &_video {
+    @media ($mobile1) {
+      & > .page-content {
+        padding: 0;
+      }
+
+      & .banner-section_bottom {
+        margin: 0;
+        justify-content: center;
+      }
+    }
+  }
+
+  &_first {
+    z-index: 1;
+  }
+
+  &_second {
+    z-index: 0;
+  }
 
   &_m-n {
     margin: 0;

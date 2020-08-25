@@ -12,6 +12,7 @@
   cursor: pointer;
   user-select: none;
 
+
   &.slider-main-prev {
     left: 0;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
@@ -20,5 +21,30 @@
   &.slider-main-next {
     right: 0;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
+  }
+
+  .wr-slider-video & {
+    background: none;
+    height: 40px;
+  }
+
+  .wr-slider-specialist & {
+
+    @media ($tablet3) {
+      background: none;
+      padding: 25% 0 0;
+
+      & svg path {
+        fill: #333333;
+      }
+    }
+
+    @media ($mobile2) {
+      padding: 50% 0 0;
+    }
+
+    @media ($mobile3) {
+      padding: 70% 0 0;
+    }
   }
 }

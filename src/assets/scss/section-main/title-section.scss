@@ -2,6 +2,10 @@
   margin: 0 0 50px;
   text-align: center;
 
+  @media ($mobile1) {
+    margin: 0 0 45px;
+  }
+
   h2 &, h3 & {
     font-style: normal;
     font-weight: bold;
@@ -12,6 +16,10 @@
 
     @media ($laptop2) {
       @include fzIns(36,$valLeptop2);
+    }
+
+    @media ($mobile1) {
+      font-size: 18px;
     }
   }
 
@@ -25,6 +33,22 @@
 
     @media ($laptop2) {
       @include fzIns(36,$valLeptop2);
+    }
+
+    @media ($mobile1) {
+      font-size: 18px;
+    }
+  }
+
+  .section-main_change-mob & {
+    margin: 20px auto 55px;
+    width: 244px;
+
+    h2 &, h3 &, & span {
+
+      @media ($mobile1) {
+        color: #fff;
+      }
     }
   }
 }

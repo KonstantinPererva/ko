@@ -2,4 +2,19 @@
   width: 540px;
   background: #fff;
   padding: 60px 26px;
+  flex-shrink: 0;
+
+  @media ($laptop2) {
+    width: calc(540 * 100vw / 1200);
+  }
+
+  @media ($tablet3) {
+    width: 100%;
+    max-width: 540px;
+  }
+
+  @media ($mobile3) {
+    @include grid (1, 0, 20px);
+    padding: 30px 0;
+  }
 }

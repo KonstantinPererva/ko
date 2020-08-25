@@ -10,6 +10,10 @@
     @include heightIns(640,$valLeptop2);
   }
 
+  @media ($mobile1) {
+    height: 454px;
+  }
+
   &-bg {
     background-position: center;
     background-size: cover;
@@ -26,6 +30,20 @@
     & img {
       width: 100%;
       max-height: none;
+    }
+
+    & .simpleParallax {
+
+      @media ($mobile1) {
+        height: 100%;
+        width: 100%;
+
+        & img {
+          height: 100%;
+          width: auto;
+          object-fit: cover;
+        }
+      }
     }
   }
 
@@ -62,6 +80,10 @@
 
     @media ($laptop2) {
       @include heightIns(474,$valLeptop2);
+    }
+
+    @media ($mobile1) {
+      height: 388px;
     }
 
     & > * {

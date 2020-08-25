@@ -1,0 +1,7 @@
+.change-bg-mob {
+  @media ($mobile1) {
+    padding: 187px 0 17px;
+    margin-top: -187px;
+    background: #1D86BC;
+  }
+}

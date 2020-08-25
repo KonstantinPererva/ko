@@ -16,10 +16,19 @@
     align-items: center;
   }
 
+  @media ($mobile1) {
+    height: 352px;
+    background-position: center;
+  }
+
   & .page-content {
 
     @media ($laptop2) {
       padding: 0 60px;
+    }
+
+    @media ($mobile1) {
+      padding: 0 20px;
     }
   }
 }

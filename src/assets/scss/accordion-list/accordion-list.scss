@@ -2,4 +2,8 @@
   background: #FFF;
   padding: 27px 40px 56px;
   margin: 0 0 10px;
+
+  @media ($mobile1) {
+    padding: 27px 10px 56px;
+  }
 }

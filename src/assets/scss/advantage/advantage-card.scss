@@ -13,6 +13,15 @@
     @include grid (3, 15px, 15px);
   }
 
+  @media ($mobile1) {
+    @include grid (2, 15px, 15px);
+  }
+
+  @media ($mobile3) {
+    @include grid (1, 0, 20px);
+    width: 100%;
+  }
+
   &_small {
     padding: 48px 60px;
     min-height: 333px;
@@ -20,6 +29,15 @@
     @media ($laptop2) {
       padding: 48px 40px;
       min-height: 260px;
+    }
+
+    @media ($mobile1) {
+      @include grid (3, 15px, 15px);
+    }
+
+    @media ($mobile2) {
+      @include grid (1, 0, 20px);
+      width: 100%;
     }
   }
 }

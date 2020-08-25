@@ -8,5 +8,10 @@
     @media ($tablet1) {
       @include grid (2,15px,15px);
     }
+
+    @media ($mobile1) {
+      @include grid (1,0,20px);
+      width: 100%;
+    }
   }
 }

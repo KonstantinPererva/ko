@@ -4,6 +4,10 @@
   margin: 0 auto 35px;
   text-align: center;
 
+  @media ($mobile1) {
+    margin: 0 auto 40px;
+  }
+
   & span {
     font-style: normal;
     font-weight: normal;
@@ -14,6 +18,10 @@
 
     @media ($laptop2) {
       @include fzIns(24,$valLeptop2);
+    }
+
+    @media ($mobile1) {
+      font-size: 16px;
     }
 
     &.text-strong {

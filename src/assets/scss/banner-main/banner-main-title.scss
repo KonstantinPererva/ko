@@ -7,6 +7,10 @@
     margin: 0 0 25px;
   }
 
+  @media ($mobile1) {
+    max-width: 100%;
+  }
+
   h1 &, h2 & {
     font-style: normal;
     font-weight: bold;
@@ -14,6 +18,16 @@
     line-height: 140%;
     color: #FFFFFF;
     margin: 0 0 7px;
+
+    @media ($laptop2) {
+      @include fzIns(56, $valLeptop2);
+      line-height: 100%;
+    }
+
+    @media ($mobile1) {
+      font-size: 36px;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
   }
 
   & span {
@@ -26,6 +40,11 @@
     @media ($laptop2) {
       @include fzIns(56, $valLeptop2);
       line-height: 100%;
+    }
+
+    @media ($mobile1) {
+      font-size: 36px;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
   }
 }

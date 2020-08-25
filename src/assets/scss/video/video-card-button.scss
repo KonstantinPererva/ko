@@ -1,0 +1,18 @@
+.video-card-button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 58px;
+  height: 41px;
+  cursor: pointer;
+  user-focus: none;
+
+  &:hover {
+    & svg path {
+      fill: #fd0d00;
+    }
+  }
+}

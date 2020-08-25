@@ -5,6 +5,10 @@
     margin: 0 0 30px;
   }
 
+  @media ($mobile1) {
+    margin: 0;
+  }
+
   & p {
     font-style: normal;
     font-weight: normal;

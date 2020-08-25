@@ -2,6 +2,10 @@
   max-width: 55%;
   width: 100%;
 
+  @media ($mobile1) {
+    max-width: 100%;
+  }
+
   & span {
     font-style: normal;
     font-weight: 500;
@@ -11,6 +15,11 @@
 
     @media ($laptop2) {
       @include fzIns(24, $valLeptop2);
+    }
+
+    @media ($mobile1) {
+      font-size: 14px;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
   }
 }

@@ -1,4 +1,13 @@
 .box-info {
   padding: 55px;
   background: #fff;
+
+  @media ($mobile1) {
+    box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.1);
+    padding: 35px 26px 44px;
+
+    & .title-section {
+      margin: 0 0 30px;
+    }
+  }
 }

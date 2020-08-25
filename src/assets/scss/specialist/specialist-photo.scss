@@ -9,6 +9,16 @@
   margin: auto;
   z-index: 0;
 
+  @media ($tablet3) {
+    position: relative;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  @media ($mobile2) {
+    max-width: 190px;
+  }
+
   & img {
     width: 100%;
     max-height: none;

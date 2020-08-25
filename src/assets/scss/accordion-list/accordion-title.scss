@@ -26,6 +26,10 @@
     transition: 200ms;
   }
 
+  &__indicator {
+    margin: 0 0 0 15px;
+  }
+
   &__indicator svg {
     transition: inherit;
 

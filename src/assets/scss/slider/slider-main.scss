@@ -1,4 +1,8 @@
 .slider-main {
   position: relative;
   z-index: 1;
+  
+  &.wr-slider-video {
+    background: #000;
+  }
 }
