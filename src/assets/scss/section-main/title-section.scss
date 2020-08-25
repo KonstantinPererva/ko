@@ -41,12 +41,11 @@
   }
 
   .section-main_change-mob & {
-    margin: 20px auto 55px;
-    width: 244px;
+    @media ($mobile1) {
+      margin: 20px auto 55px;
+      width: 244px;
 
-    h2 &, h3 &, & span {
-
-      @media ($mobile1) {
+      h2 &, h3 &, & span {
         color: #fff;
       }
     }

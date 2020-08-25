@@ -118,7 +118,7 @@ if(document.querySelectorAll('.banner-section-bg img').length) {
         // delay: .4,
         // transition: 'cubic-bezier(0,0,0,1)',
         orientation: 'down',
-        scale: 1.5
+        scale: 1.3
     });
 }
 
@@ -228,8 +228,8 @@ function PlayVideo(node) {
     }
 
     self.removeIframe = function() {
-        self.videoBox.style.display = 'none';
         self.videoBox.innerHTML = "";
+        self.videoBox.style.display = 'none';
     }
 
     self.btn.addEventListener('click', function () {
