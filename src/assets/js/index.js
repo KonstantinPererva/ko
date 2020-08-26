@@ -1,12 +1,34 @@
 // open dropdown block
 
-function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return !!right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+function _instanceof(left, right) {
+    if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) {
+        return !!right[Symbol.hasInstance](left);
+    } else {
+        return left instanceof right;
+    }
+}
 
-function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) {
+    if (!_instanceof(instance, Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
+}
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+    }
+}
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+}
 
 var Slide = function () {
     function Slide(node, opt) {
@@ -89,7 +111,7 @@ var Slide = function () {
     return Slide;
 }();
 
-if(document.querySelectorAll('.accordion-list-item').length) {
+if (document.querySelectorAll('.accordion-list-item').length) {
     var slides = document.querySelectorAll('.accordion-list-item');
 
     [].forEach.call(slides, function (el) {
@@ -112,7 +134,7 @@ if(document.querySelectorAll('.accordion-list-item').length) {
 ///////////////////
 // Parallax
 
-if(document.querySelectorAll('.banner-section-bg img').length) {
+if (document.querySelectorAll('.banner-section-bg img').length) {
     var image = document.querySelectorAll('.banner-section-bg img');
     new simpleParallax(image, {
         // delay: .4,
@@ -179,7 +201,7 @@ function PlayVideo(node) {
     self.videoBox = self.node.querySelector('.video-card-iframe');
     self.player = null;
 
-    self.createIframe = function() {
+    self.createIframe = function () {
         new Promise(function (resolve, reject) {
             self.videoBox.style.display = 'block';
             self.iframe = document.createElement('div');
@@ -188,7 +210,7 @@ function PlayVideo(node) {
 
             resolve();
         }).then(function () {
-            self.player  = new YT.Player('player-' + self.videoBox.dataset.id, {
+            self.player = new YT.Player('player-' + self.videoBox.dataset.id, {
                 videoId: self.videoBox.dataset.src,
                 events: {
                     'onReady': onPlayerReady,
@@ -200,10 +222,10 @@ function PlayVideo(node) {
 
     function onPlayerStateChange(event) {
         function pause() {
-            if (event.data === 1 ) {
+            if (event.data === 1) {
                 setTimeout(function () {
                     event.target.pauseVideo();
-                },10)
+                }, 10)
             }
         }
 
@@ -224,7 +246,7 @@ function PlayVideo(node) {
         self.player.pauseVideo();
     }
 
-    self.removeIframe = function() {
+    self.removeIframe = function () {
         self.videoBox.innerHTML = "";
         self.videoBox.style.display = 'none';
     };
@@ -266,28 +288,30 @@ function Resizer(node, divisor) {
     self.divisor = self.node.querySelector(divisor);
     self.drag = self.divisor.querySelector('.draggable');
 
-    self.drag.addEventListener('mousedown', function(e) {self.resize(e)});
+    self.drag.addEventListener('mousedown', function (e) {
+        self.resize(e)
+    });
 
-    self.resize = function(ev) {
+    self.resize = function (ev) {
         var _s = this;
         _s.event = ev;
         _s.nodeWidth = self.node.getBoundingClientRect().width;
         _s.startWidth = self.divisor.getBoundingClientRect().width;
 
-        _s.move = function(e) {
+        _s.move = function (e) {
             var moveX = (e.pageX - _s.event.pageX);
             moveX *= -1;
 
             _s.currentWidth = _s.startWidth + moveX;
 
-            self.divisor.style.width =  _s.currentWidth + 'px';
+            self.divisor.style.width = _s.currentWidth + 'px';
 
             if (_s.currentWidth >= _s.nodeWidth) {
-                self.divisor.style.width =  _s.nodeWidth + 'px';
+                self.divisor.style.width = _s.nodeWidth + 'px';
             }
 
             if (_s.currentWidth <= 0) {
-                self.divisor.style.width =  '0';
+                self.divisor.style.width = '0';
             }
         }
 
@@ -295,31 +319,33 @@ function Resizer(node, divisor) {
 
         document.addEventListener('mouseup', function () {
             this.removeEventListener('mousemove', _s.move);
-            self.drag.removeEventListener('mousedown', function(e) {self.resize(e)});
+            self.drag.removeEventListener('mousedown', function (e) {
+                self.resize(e)
+            });
         });
     };
 
-    self.resizeTouch = function(evt) {
+    self.resizeTouch = function (evt) {
         var _s = this;
         _s.nodeWidth = self.node.getBoundingClientRect().width;
         _s.startWidth = self.divisor.getBoundingClientRect().width;
 
         _s.startTouchX = evt.changedTouches[0].pageX;
 
-        _s.moveTouch = function(ev) {
+        _s.moveTouch = function (ev) {
             var moveX = (ev.changedTouches[0].pageX - self.startTouchX);
             moveX *= -1;
 
             _s.currentWidth = _s.startWidth + moveX;
 
-            self.divisor.style.width =  _s.currentWidth + 'px';
+            self.divisor.style.width = _s.currentWidth + 'px';
 
             if (_s.currentWidth >= _s.nodeWidth) {
-                self.divisor.style.width =  _s.nodeWidth + 'px';
+                self.divisor.style.width = _s.nodeWidth + 'px';
             }
 
             if (_s.currentWidth <= 0) {
-                self.divisor.style.width =  '0';
+                self.divisor.style.width = '0';
             }
         }
 
@@ -327,11 +353,15 @@ function Resizer(node, divisor) {
 
         document.addEventListener('touchend', function () {
             this.removeEventListener('touchmove', _s.moveTouch);
-            self.drag.removeEventListener('touchstart', function(e) {self.resizeTouch(e)});
+            self.drag.removeEventListener('touchstart', function (e) {
+                self.resizeTouch(e)
+            });
         });
     };
 
-    self.drag.addEventListener('touchstart', function(e) {self.resizeTouch(e)});
+    self.drag.addEventListener('touchstart', function (e) {
+        self.resizeTouch(e)
+    });
 }
 
 new Resizer('#resultRecall_1', '.divisorAfter');
@@ -374,7 +404,180 @@ function AnimationEl(node, opt) {
     })
 }
 
-var animatedNodes = new AnimationEl('.animate', {
-    transition: 400,
-    position: 150
-});
+
+// var animatedNodes = new AnimationEl('.animate', {
+//     transition: 400,
+//     position: 150
+// });
+
+function СontrolModal(node) {
+    var self = this;
+    self.node = node;
+    self.modal = document.querySelector('.modal.appointment-modal');
+    self.modalContent = self.modal.querySelector('.modal.appointment-modal > .content');
+    self.bntClose = self.modal.querySelector('.button-preset-cancel');
+
+    self.open = function () {
+        self.modal.style.transition = '600ms';
+        self.modalContent.style.transition = '600ms';
+        document.documentElement.style.width = document.body.getBoundingClientRect().width;
+        document.documentElement.style.overflow = 'hidden';
+        self.modal.style.display = 'block';
+        setTimeout(function () {
+            self.modal.style.opacity = '1';
+            self.modalContent.style.opacity = '1';
+            self.modalContent.style.transform = 'scale(1)';
+        }, 10)
+    };
+
+    self.close = function () {
+        document.documentElement.style.width = "auto";
+        document.documentElement.style.overflow = 'visible';
+        self.modal.style.opacity = '0';
+        self.modalContent.style.opacity = '0';
+        self.modalContent.style.transform = 'scale(1.1)';
+        setTimeout(function () {
+            self.modal.style.display = 'none';
+            self.modal.style.transition = '0';
+            self.modalContent.style.transition = '0';
+        }, 300)
+    };
+
+    self.node.addEventListener('click', self.open);
+    self.bntClose.addEventListener('click', self.close);
+}
+
+window.addEventListener('load', function () {
+    var openModalButtons = document.getElementsByClassName('open-modal');
+
+    for (var i = 0; i < openModalButtons.length; i++) {
+        new СontrolModal(openModalButtons[i]);
+    }
+
+    document.querySelector('.open-modal-recall').addEventListener('click', function () {
+        document.querySelector('.button.recall').click();
+    });
+})
+
+//Plugin Animation
+function _instanceof2(left, right) {
+    if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) {
+        return !!right[Symbol.hasInstance](left);
+    } else {
+        return left instanceof right;
+    }
+}
+
+function _classCallCheck2(instance, Constructor) { if (!_instanceof2(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties2(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties2(Constructor.prototype, protoProps); if (staticProps) _defineProperties2(Constructor, staticProps); return Constructor; }
+
+var AnimateElement = /*#__PURE__*/function () {
+    function AnimateElement(element, animationName, opt) {
+        _classCallCheck2(this, AnimateElement);
+
+        this.opt = opt || {};
+        this.option = Object.assign({
+            transition: 350,
+            delay: 0,
+            delayGroup: 100,
+            cubicBezier: 'cubic-bezier(.29,.16,.19,.82)'
+        }, this.opt);
+        this.element = document.querySelector(element);
+        this.animationName = animationName;
+        this.delay = this.option.delay;
+        this.delayGroup = this.option.delayGroup;
+        this.cubicBezier = this.option.cubicBezier;
+        this.transition = this.option.transition;
+
+        if (document.querySelectorAll(element).length > 1) {
+            this.elementList = [].slice.call(document.querySelectorAll(element), 0);
+        }
+    }
+
+    _createClass2(AnimateElement, [{
+        key: "elementAddClass",
+        value: function elementAddClass() {
+            var self = this;
+
+            if (self.elementList.length > 1) {
+                self.elementList.forEach(function (el) {
+                    if (self.animationName.trim()) {
+                        el.classList.add(self.animationName);
+                    } else {
+                        el.style.opacity = '0';
+                    }
+
+                    setTimeout(function () {
+                        el.style.transition = self.transition + 'ms ' + self.cubicBezier + ' ' + self.delay + 'ms';
+                    }, 0);
+                });
+            } else {
+                self.element.classList.add(self.animationName);
+                self.element.style.transition = self.transition + 'ms ' + self.cubicBezier + ' ' + self.delay + 'ms';
+            }
+        }
+    }, {
+        key: "elementRemoveClass",
+        value: function elementRemoveClass() {
+            var self = this;
+
+            if (self.elementList.length > 1) {
+                self.elementList.forEach(function (el, ind) {
+                    setInterval(function () {
+                        if (self.animationName.trim()) {
+                            el.classList.remove(self.animationName);
+                        } else {
+                            el.style.opacity = '1';
+                        }
+                    }, self.delayGroup * ind);
+                });
+            } else {
+                self.element.classList.remove(self.animationName);
+            }
+        }
+    }, {
+        key: "init",
+        value: function init() {
+            if (!this.elementList) {
+                return;
+            }
+
+            this.elementAddClass();
+        }
+    }, {
+        key: "animation",
+        value: function animation() {
+            if (!this.elementList) {
+                return;
+            }
+
+            this.elementRemoveClass();
+        }
+    }]);
+
+    return AnimateElement;
+}();
+//Animation and
+
+
+window.addEventListener('load', function () {
+    var advantageCard = new AnimateElement('.advantage-card','in-Left-Up', {
+        transition: 600,
+        delay: 0,
+        delayGroup: 200,
+    });
+    advantageCard.init();
+
+    window.addEventListener('scroll', function () {
+        [].forEach.call(document.querySelectorAll('.advantage-card'), function (el) {
+            el.top = el.getBoundingClientRect().top;
+
+            if (el.top + 150 <= window.innerHeight) {
+                advantageCard.animation();
+            }
+        })
+    })
+})
