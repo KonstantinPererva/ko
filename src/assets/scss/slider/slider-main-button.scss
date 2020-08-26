@@ -12,7 +12,13 @@
   user-select: none;
 
   @media (hover: hover) {
-    cursor: pointer;
+    &:hover {
+      cursor: pointer;
+
+      & svg path {
+        fill: $c-orange;
+      }
+    }
   }
 
   @media ($mobile3) {
@@ -24,6 +30,19 @@
     }
   }
 
+  &.swiper-button-disabled {
+    opacity: .3;
+
+    @media (hover: hover) {
+      &:hover {
+        cursor: default;
+
+        & svg path {
+          fill: #fff;
+        }
+      }
+    }
+  }
 
   &.slider-main-prev {
     left: 0;

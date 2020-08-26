@@ -1,0 +1,10 @@
+.fadeInUp {
+  &-start {
+    transform: translateY(100px);
+    opacity: 0;
+
+    @media ($mobile3) {
+      transform: translateY(70px);
+    }
+  }
+}

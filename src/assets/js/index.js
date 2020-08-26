@@ -336,3 +336,45 @@ function Resizer(node, divisor) {
 
 new Resizer('#resultRecall_1', '.divisorAfter');
 new Resizer('#resultRecall_2', '.divisorAfter');
+
+/////////////////
+////////////////
+////////////////
+////////////////
+///////////////////
+//animate block
+function AnimationEl(node, opt) {
+    var self = this;
+
+    self.opt = opt || {};
+    self.option = Object.assign({
+        type: 'fadeInUp',
+        transition: 300,
+        position: 200
+    }, self.opt);
+    self.node = node;
+    self.nodes = document.querySelectorAll(self.node + '.' + self.option.type);
+    self.top = null;
+    self.startClass = self.option.type + '-start';
+    self.transition = self.option.transition + 'ms';
+
+    [].forEach.call(self.nodes, function (el) {
+        el.classList.add(self.startClass);
+        el.style.transition = self.transition;
+    })
+
+    window.addEventListener('scroll', function () {
+        [].forEach.call(document.querySelectorAll(self.node + '.' + self.option.type + '.' + self.startClass), function (el) {
+            el.top = el.getBoundingClientRect().top;
+
+            if (el.top + self.option.position <= window.innerHeight) {
+                el.classList.remove(self.startClass);
+            }
+        })
+    })
+}
+
+var animatedNodes = new AnimationEl('.animate', {
+    transition: 400,
+    position: 150
+});
