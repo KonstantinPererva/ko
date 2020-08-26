@@ -274,7 +274,9 @@ function initVideo() {
     }
 }
 
-initVideo();
+if (document.querySelectorAll('.video-card').length) {
+    initVideo();
+}
 
 /////////////////
 ////////////////
@@ -372,43 +374,7 @@ new Resizer('#resultRecall_2', '.divisorAfter');
 ////////////////
 ////////////////
 ///////////////////
-//animate block
-function AnimationEl(node, opt) {
-    var self = this;
-
-    self.opt = opt || {};
-    self.option = Object.assign({
-        type: 'fadeInUp',
-        transition: 300,
-        position: 200
-    }, self.opt);
-    self.node = node;
-    self.nodes = document.querySelectorAll(self.node + '.' + self.option.type);
-    self.top = null;
-    self.startClass = self.option.type + '-start';
-    self.transition = self.option.transition + 'ms';
-
-    [].forEach.call(self.nodes, function (el) {
-        el.classList.add(self.startClass);
-        el.style.transition = self.transition;
-    })
-
-    window.addEventListener('scroll', function () {
-        [].forEach.call(document.querySelectorAll(self.node + '.' + self.option.type + '.' + self.startClass), function (el) {
-            el.top = el.getBoundingClientRect().top;
-
-            if (el.top + self.option.position <= window.innerHeight) {
-                el.classList.remove(self.startClass);
-            }
-        })
-    })
-}
-
-
-// var animatedNodes = new AnimationEl('.animate', {
-//     transition: 400,
-//     position: 150
-// });
+//open - close modal
 
 function СontrolModal(node) {
     var self = this;
@@ -416,11 +382,27 @@ function СontrolModal(node) {
     self.modal = document.querySelector('.modal.appointment-modal');
     self.modalContent = self.modal.querySelector('.modal.appointment-modal > .content');
     self.bntClose = self.modal.querySelector('.button-preset-cancel');
+    self.widthScroll = function () {
+        let div = document.createElement('div');
+        div.style.opacity = '0';
+        div.style.overflowY = 'scroll';
+        div.style.width = '50px';
+        div.style.height = '50px';
+
+        document.body.append(div);
+
+        let scrollWidth = div.offsetWidth - div.clientWidth;
+
+        div.remove();
+
+        return scrollWidth;
+    };
+
 
     self.open = function () {
         self.modal.style.transition = '600ms';
         self.modalContent.style.transition = '600ms';
-        document.documentElement.style.width = document.body.getBoundingClientRect().width;
+        document.documentElement.style.width = document.body.getBoundingClientRect().width - self.widthScroll();
         document.documentElement.style.overflow = 'hidden';
         self.modal.style.display = 'block';
         setTimeout(function () {
@@ -448,136 +430,17 @@ function СontrolModal(node) {
 }
 
 window.addEventListener('load', function () {
-    var openModalButtons = document.getElementsByClassName('open-modal');
+    if (document.getElementsByClassName('open-modal').length) {
+        var openModalButtons = document.getElementsByClassName('open-modal');
 
-    for (var i = 0; i < openModalButtons.length; i++) {
-        new СontrolModal(openModalButtons[i]);
-    }
-
-    document.querySelector('.open-modal-recall').addEventListener('click', function () {
-        document.querySelector('.button.recall').click();
-    });
-})
-
-//Plugin Animation
-function _instanceof2(left, right) {
-    if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) {
-        return !!right[Symbol.hasInstance](left);
-    } else {
-        return left instanceof right;
-    }
-}
-
-function _classCallCheck2(instance, Constructor) { if (!_instanceof2(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties2(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties2(Constructor.prototype, protoProps); if (staticProps) _defineProperties2(Constructor, staticProps); return Constructor; }
-
-var AnimateElement = /*#__PURE__*/function () {
-    function AnimateElement(element, animationName, opt) {
-        _classCallCheck2(this, AnimateElement);
-
-        this.opt = opt || {};
-        this.option = Object.assign({
-            transition: 350,
-            delay: 0,
-            delayGroup: 100,
-            cubicBezier: 'cubic-bezier(.29,.16,.19,.82)'
-        }, this.opt);
-        this.element = document.querySelector(element);
-        this.animationName = animationName;
-        this.delay = this.option.delay;
-        this.delayGroup = this.option.delayGroup;
-        this.cubicBezier = this.option.cubicBezier;
-        this.transition = this.option.transition;
-
-        if (document.querySelectorAll(element).length > 1) {
-            this.elementList = [].slice.call(document.querySelectorAll(element), 0);
+        for (var i = 0; i < openModalButtons.length; i++) {
+            new СontrolModal(openModalButtons[i]);
         }
     }
 
-    _createClass2(AnimateElement, [{
-        key: "elementAddClass",
-        value: function elementAddClass() {
-            var self = this;
-
-            if (self.elementList.length > 1) {
-                self.elementList.forEach(function (el) {
-                    if (self.animationName.trim()) {
-                        el.classList.add(self.animationName);
-                    } else {
-                        el.style.opacity = '0';
-                    }
-
-                    setTimeout(function () {
-                        el.style.transition = self.transition + 'ms ' + self.cubicBezier + ' ' + self.delay + 'ms';
-                    }, 0);
-                });
-            } else {
-                self.element.classList.add(self.animationName);
-                self.element.style.transition = self.transition + 'ms ' + self.cubicBezier + ' ' + self.delay + 'ms';
-            }
-        }
-    }, {
-        key: "elementRemoveClass",
-        value: function elementRemoveClass() {
-            var self = this;
-
-            if (self.elementList.length > 1) {
-                self.elementList.forEach(function (el, ind) {
-                    setInterval(function () {
-                        if (self.animationName.trim()) {
-                            el.classList.remove(self.animationName);
-                        } else {
-                            el.style.opacity = '1';
-                        }
-                    }, self.delayGroup * ind);
-                });
-            } else {
-                self.element.classList.remove(self.animationName);
-            }
-        }
-    }, {
-        key: "init",
-        value: function init() {
-            if (!this.elementList) {
-                return;
-            }
-
-            this.elementAddClass();
-        }
-    }, {
-        key: "animation",
-        value: function animation() {
-            if (!this.elementList) {
-                return;
-            }
-
-            this.elementRemoveClass();
-        }
-    }]);
-
-    return AnimateElement;
-}();
-//Animation and
-
-
-window.addEventListener('load', function () {
-    var advantageCard = new AnimateElement('.advantage-card','in-Left-Up', {
-        transition: 600,
-        delay: 0,
-        delayGroup: 200,
-    });
-    advantageCard.init();
-
-    window.addEventListener('scroll', function () {
-        [].forEach.call(document.querySelectorAll('.advantage-card'), function (el) {
-            el.top = el.getBoundingClientRect().top;
-
-            if (el.top + 150 <= window.innerHeight) {
-                advantageCard.animation();
-            }
-        })
-    })
+    if (document.getElementsByClassName('open-modal-recall').length) {
+        document.querySelector('.open-modal-recall').addEventListener('click', function () {
+            document.querySelector('.button.recall').click();
+        });
+    }
 })

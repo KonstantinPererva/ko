@@ -1,36 +1,37 @@
 /*animation*/
 .in-Left-Up {
   opacity: 0;
-  transform: translate(50px,50px) scale(.8,.8);
+  transform: translate(100px,100px) scale(.8,.8);
 }
 .in-Left-Down {
   opacity: 0;
-  transform: translate(50px,-50px) scale(.8,.8);
+  transform: translate(100px,-100px) scale(.8,.8);
 }
 .in-Right-Up {
   opacity: 0;
-  transform: translate(-50px,50px) scale(.8,.8);
+  transform: translate(-100px,100px) scale(.8,.8);
 }
 .in-Right-Down {
   opacity: 0;
-  transform: translate(-50px,-50px) scale(.8,.8);
+  transform: translate(-100px,-100px) scale(.8,.8);
 }
 .in-Left {
   opacity: 0;
-  transform: translate(50px, 0) scale(.8,.8);
+  transform: translate(100px, 0) scale(.8,.8);
 }
 .in-Right {
   opacity: 0;
-  transform: translate(-50px, 0) scale(.8,.8);
+  transform: translate(-100px, 0) scale(.8,.8);
 }
 .in-Down {
   opacity: 0;
-  transform: translate(0,-50px) scale(.8,.8);
+  transform: translate(0,-100px) scale(.8,.8);
 }
 .in-Up {
   opacity: 0;
-  transform: translate(0,50px) scale(.8,.8);
+  transform: translate(0,100px) scale(.8,.8);
 }
 .fade {
   opacity: 0;
+  transform: scale(.8,.8);
 }

@@ -11,5 +11,9 @@
     font-size: 18px;
     line-height: 100%;
     color: #FFFFFF;
+
+    @media ($tablet3) {
+      font-size: 14px;
+    }
   }
 }
