@@ -1,8 +1,10 @@
 .specialist-card-box {
+  position: relative;
   width: 540px;
   background: #fff;
   padding: 60px 26px;
   flex-shrink: 0;
+  z-index: 2;
 
   @media ($laptop2) {
     width: calc(540 * 100vw / 1200);

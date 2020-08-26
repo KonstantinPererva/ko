@@ -5,4 +5,9 @@
   &.wr-slider-video {
     background: #000;
   }
+
+  &.wr-slider-specialist__inner {
+    position: relative;
+    user-select: none;
+  }
 }

@@ -51,8 +51,8 @@
 
   &:hover, &:focus, &:active {
     color: #fff;
-    background: $c-text;
-    border-color: $c-text;
+    background: #333;
+    border-color: #333;
 
     & svg path {
       fill: #fff;

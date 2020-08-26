@@ -36,8 +36,9 @@
     }
 
     @media ($mobile2) {
-      @include grid (1, 0, 20px);
+      @include grid (1, 0, 0);
       width: 100%;
+      padding: 40px;
     }
   }
 }

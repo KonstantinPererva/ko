@@ -196,23 +196,20 @@ function PlayVideo(node) {
                 }
             });
         });
-    }
+    };
 
     function onPlayerStateChange(event) {
-        document.getElementById('slider-video-button-prev').addEventListener('click', function () {
-            if (event.data == 1 ) {
+        function pause() {
+            if (event.data === 1 ) {
                 setTimeout(function () {
                     event.target.pauseVideo();
                 },10)
             }
-        })
-        document.getElementById('slider-video-button-next').addEventListener('click', function () {
-            if (event.data == 1 ) {
-                setTimeout(function () {
-                    event.target.pauseVideo();
-                },10)
-            }
-        })
+        }
+
+        document.getElementById('slider-video-button-prev').addEventListener('click', pause);
+
+        document.getElementById('slider-video-button-next').addEventListener('click', pause);
     }
 
     function onPlayerReady(event) {
@@ -230,11 +227,11 @@ function PlayVideo(node) {
     self.removeIframe = function() {
         self.videoBox.innerHTML = "";
         self.videoBox.style.display = 'none';
-    }
+    };
 
     self.btn.addEventListener('click', function () {
         self.createIframe()
-    })
+    });
 
     return {
         play: onPlayerPlay,
@@ -263,94 +260,78 @@ initVideo();
 ////////////////
 ///////////////////
 
-function startup() {
-    menu.addEventListener("touchstart", handleStart, false);
-    menu.addEventListener("touchend", handleEnd, false);
-
-    var ongoingTouches = [];
-    var startPoint = null;
-    var endPoint = null;
-
-    function handleStart(evt) {
-        var touches = evt.changedTouches;
-
-        for (var i = 0; i < touches.length; i++) {
-            ongoingTouches.push(touches[i]);
-        }
-
-        startPoint = ongoingTouches[ongoingTouches.length -1].pageX;
-    }
-
-    function handleEnd(evt) {
-        var touches = evt.changedTouches;
-
-        for (var i = 0; i < touches.length; i++) {
-            ongoingTouches.push(touches[i]);
-        }
-
-        endPoint = ongoingTouches[ongoingTouches.length -1].pageX;
-
-        closeMenu();
-    }
-
-    function closeMenu() {
-        if (startPoint - endPoint >= 50) {
-            menu.classList.remove('catalog-container__left_active');
-            substrate.classList.remove('substrate_active');
-        }
-    }
-}
-
-/////////////////
-////////////////
-////////////////
-////////////////
-///////////////////
-
 function Resizer(node, divisor) {
     var self = this;
     self.node = document.querySelector(node);
     self.divisor = self.node.querySelector(divisor);
     self.drag = self.divisor.querySelector('.draggable');
 
-    self.drag.addEventListener('mousedown', function(e){
-        resize(e);
-    })
+    self.drag.addEventListener('mousedown', function(e) {self.resize(e)});
 
-    function resize(ev){
+    self.resize = function(ev) {
         var _s = this;
         _s.event = ev;
         _s.nodeWidth = self.node.getBoundingClientRect().width;
         _s.startWidth = self.divisor.getBoundingClientRect().width;
 
-        $(document).on('mouseup', function(e){
-            $(document).off('mouseup').off('mousemove');
-        });
-
-        $(document).on('mousemove', function(me){
-            var moveX = (me.pageX - _s.event.pageX);
+        _s.move = function(e) {
+            var moveX = (e.pageX - _s.event.pageX);
             moveX *= -1;
 
             _s.currentWidth = _s.startWidth + moveX;
 
-            self.divisor.style.width =  currentWidth + 'px';
+            self.divisor.style.width =  _s.currentWidth + 'px';
 
             if (_s.currentWidth >= _s.nodeWidth) {
-                $(document).off('mouseup').off('mousemove');
-                setTimeout(function () {
-                    self.divisor.style.width =  _s.nodeWidth + 'px';
-                },0);
+                self.divisor.style.width =  _s.nodeWidth + 'px';
             }
 
             if (_s.currentWidth <= 0) {
-                $(document).off('mouseup').off('mousemove');
-
-                setTimeout(function () {
-                    self.divisor.style.width =  '0';
-                },0);
+                self.divisor.style.width =  '0';
             }
+        }
+
+        document.addEventListener('mousemove', _s.move);
+
+        document.addEventListener('mouseup', function () {
+            this.removeEventListener('mousemove', _s.move);
+            self.drag.removeEventListener('mousedown', function(e) {self.resize(e)});
         });
-    }
+    };
+
+    self.resizeTouch = function(evt) {
+        var _s = this;
+        _s.nodeWidth = self.node.getBoundingClientRect().width;
+        _s.startWidth = self.divisor.getBoundingClientRect().width;
+
+        _s.startTouchX = evt.changedTouches[0].pageX;
+
+        _s.moveTouch = function(ev) {
+            var moveX = (ev.changedTouches[0].pageX - self.startTouchX);
+            moveX *= -1;
+
+            _s.currentWidth = _s.startWidth + moveX;
+
+            self.divisor.style.width =  _s.currentWidth + 'px';
+
+            if (_s.currentWidth >= _s.nodeWidth) {
+                self.divisor.style.width =  _s.nodeWidth + 'px';
+            }
+
+            if (_s.currentWidth <= 0) {
+                self.divisor.style.width =  '0';
+            }
+        }
+
+        document.addEventListener('touchmove', _s.moveTouch);
+
+        document.addEventListener('touchend', function () {
+            this.removeEventListener('touchmove', _s.moveTouch);
+            self.drag.removeEventListener('touchstart', function(e) {self.resizeTouch(e)});
+        });
+    };
+
+    self.drag.addEventListener('touchstart', function(e) {self.resizeTouch(e)});
 }
 
 new Resizer('#resultRecall_1', '.divisorAfter');

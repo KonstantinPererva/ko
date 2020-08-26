@@ -1,6 +1,6 @@
 .slider-main-button {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   bottom: 0;
   margin: auto;
@@ -9,8 +9,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   user-select: none;
+
+  @media (hover: hover) {
+    cursor: pointer;
+  }
+
+  @media ($mobile3) {
+    width: 30px;
+
+    & svg {
+      width: 6px;
+      height: auto;
+    }
+  }
 
 
   &.slider-main-prev {
@@ -32,19 +44,10 @@
 
     @media ($tablet3) {
       background: none;
-      padding: 25% 0 0;
 
       & svg path {
         fill: #333333;
       }
-    }
-
-    @media ($mobile2) {
-      padding: 50% 0 0;
-    }
-
-    @media ($mobile3) {
-      padding: 70% 0 0;
     }
   }
 }
